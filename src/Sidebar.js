@@ -16,7 +16,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchOutlined from '@material-ui/icons/SearchOutlined';
 /* import PlumbingOutlined from '@material-ui/icons/PlumbingOutlined';*/
-import db from './firebasee';
+import db from './firebase';
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
@@ -30,6 +30,10 @@ function Sidebar() {
     }))
     )
 );
+/* 
+    return () => {
+      unsubscribe();
+    } */
   }, []);    
   
     return (

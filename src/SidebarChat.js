@@ -1,7 +1,7 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react'
 import './SidebarChat.css';
-import db from './firebasee';  
+import db from './firebase';  
 
 function SidebarChat({ id, name, addNewChat }) {
     /* const [seed, setSeed] = useState('');
