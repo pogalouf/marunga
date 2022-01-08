@@ -1,13 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+/* import * as serviceWorker from './serviceWorker'; */
+import reducer, { initialState } from './reducer';
+import { StateProvider } from './StateProvider';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode> 
+    <StateProvider initialState={initialState}
+     reducer={reducer}>
     <App />
-  </React.StrictMode>,
+    </StateProvider>
+   </React.StrictMode>, 
   document.getElementById('root')
 );
 
@@ -15,3 +21,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+/* */
+/* import { renderMatches } from 'react-router-dom'; */

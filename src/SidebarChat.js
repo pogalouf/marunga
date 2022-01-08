@@ -2,6 +2,7 @@ import { Avatar } from '@material-ui/core';
 import React from 'react'
 import './SidebarChat.css';
 import db from './firebase';  
+import { Link } from 'react-router-dom';
 
 function SidebarChat({ id, name, addNewChat }) {
     /* const [seed, setSeed] = useState('');
@@ -13,20 +14,23 @@ function SidebarChat({ id, name, addNewChat }) {
          const roomName = prompt('Please enter your name for chat');
         if (roomName) {
              db.collection("rooms").add({
-                name: roomName
-            })  
+                name: roomName,
+            });  
         }
         }; 
 
     return  !addNewChat ? (
-        <div className='sidebarChat'>
+        <Link to={`/rooms/${id}`}>
+           <div className='sidebarChat'>
             <Avatar src='images/profile1.png'/*src={`https://avatars.dicebear.com/
             api/human/${seed}.svg`}*/ />
             <div className="sidebarChat__info">
                 <h2>{name}</h2>
                 <p>Last Message...</p>
             </div>
-        </div>
+        </div>  
+        </Link>
+       
     ): (
         <div onClick={createChat} 
         className='sidebarChat'>
